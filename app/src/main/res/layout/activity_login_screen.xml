@@ -37,7 +37,7 @@
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
             android:layout_below="@+id/tvLogin"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:id="@+id/layoutFB"
             android:background="@drawable/fb_round_shape"
             android:backgroundTint="#464eba"
@@ -45,6 +45,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_weight="1"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="30dp"
                 android:src="@drawable/fblogo1"/>
@@ -52,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Facebook"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="100dp"
@@ -74,17 +75,18 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:src="@drawable/google"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Google"
+                android:layout_weight="1"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="100dp"
-                android:layout_marginLeft="10dp"
                 android:textColor="#000000"
 
                 />
@@ -100,26 +102,24 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/border"
             android:padding="5dp">
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:src="@drawable/ic_apps_black_24dp"/>
+                android:layout_weight="1"
+                android:src="@drawable/ic_apps_black_24dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Number"
+                android:layout_weight="1"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="100dp"
-                android:layout_marginLeft="10dp"
                 android:textColor="#000000"
                 />
         </LinearLayout>
     </RelativeLayout>
-
-
-
 </RelativeLayout>

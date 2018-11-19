@@ -40,8 +40,10 @@ public class Stepper extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 viewPager.setCurrentItem(currentPage + 1);
-                if(finishPage == currentPage) {
-
+                if(finishPage-1 == currentPage) {
+                    Intent intent = new Intent(Stepper.this, LoginScreen.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });

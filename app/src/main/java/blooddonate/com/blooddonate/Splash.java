@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
 
 public class Splash extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class Splash extends AppCompatActivity {
                 Intent intent = new Intent(Splash.this, Stepper.class);
                 startActivity(intent);
                 finish();
+
             }
         }, 2000);
     }

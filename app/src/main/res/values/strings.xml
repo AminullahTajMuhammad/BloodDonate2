@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">BloodDonate</string>
     <string name="hello">hello</string>
+    <string name="skip">Skip</string>
+    <string name="finish">Finish</string>
+    <string name="login_and_register">LOGIN AND REGISTER</string>
+    <string name="todo">TODO</string>
 </resources>

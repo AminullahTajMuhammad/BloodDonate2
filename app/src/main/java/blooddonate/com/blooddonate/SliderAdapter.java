@@ -40,6 +40,7 @@ public class SliderAdapter extends PagerAdapter {
         return slideName.length;
     }
 
+
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
         return view == (RelativeLayout) o;
