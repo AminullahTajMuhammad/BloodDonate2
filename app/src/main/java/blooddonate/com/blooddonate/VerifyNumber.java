@@ -22,7 +22,7 @@ public class VerifyNumber extends AppCompatActivity {
         btnGetOPD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VerifyNumber.this, DialogScreen.class);
+                Intent intent = new Intent(VerifyNumber.this, BloodDetail.class);
                 startActivity(intent);
             }
         });
