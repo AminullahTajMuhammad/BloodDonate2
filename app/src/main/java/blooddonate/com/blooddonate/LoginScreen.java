@@ -40,7 +40,21 @@ public class LoginScreen extends AppCompatActivity {
 
             public void onClick(View v) {
                 Intent intent = new Intent(LoginScreen.this, VerifyNumber.class);
+                startActivity(intent);
             }
         });
+    }
+
+    public void onClickFb(View view) {
+
+    }
+
+
+    public void onClickGoogle(View view) {
+
+    }
+
+    public void onClickNumber(View view) {
+
     }
 }

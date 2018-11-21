@@ -20,7 +20,8 @@
         <activity android:name=".Stepper" />
         <activity android:name=".LoginScreen" />
         <activity android:name=".BloodDetail" />
-        <activity android:name=".VerifyNumber"></activity>
+        <activity android:name=".VerifyNumber" />
+        <activity android:name=".DialogScreen"></activity>
     </application>
 
 </manifest>

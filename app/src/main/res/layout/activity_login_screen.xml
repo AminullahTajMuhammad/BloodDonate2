@@ -41,6 +41,7 @@
             android:id="@+id/layoutFB"
             android:background="@drawable/fb_round_shape"
             android:backgroundTint="#464eba"
+            android:clickable="true"
             android:padding="5dp">
             <ImageView
                 android:layout_width="40dp"
@@ -71,6 +72,7 @@
             android:layout_below="@+id/layoutFB"
             android:layout_marginTop="15dp"
             android:background="@drawable/border"
+            android:clickable="true"
             android:padding="5dp">
             <ImageView
                 android:layout_width="40dp"
@@ -100,6 +102,7 @@
             android:id="@+id/layoutNumber"
             android:layout_below="@+id/layoutGoogle"
             android:layout_marginTop="15dp"
+            android:clickable="true"
             android:background="@drawable/border"
             android:padding="5dp">
 

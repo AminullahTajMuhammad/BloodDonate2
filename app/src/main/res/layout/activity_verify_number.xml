@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VerifyNumber">
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:background="#FAFAFA"/>
 
-</android.support.constraint.ConstraintLayout>
+    <TextView android:id="@+id/tvVrifyNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBack"
+        android:layout_margin="30dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="Verify Number"/>
+
+    <EditText android:id="@+id/edtNumber"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="number"
+        android:paddingLeft="100dp"
+        android:paddingRight="100sp"
+        android:layout_below="@+id/tvVrifyNumber"
+        android:layout_marginLeft="30dp"
+        android:hint="Enter Number"
+        android:background="@drawable/edittext_border"/>
+
+    <Button android:id="@+id/btnGetOPD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtNumber"
+        android:layout_margin="10dp"
+        android:paddingLeft="140dp"
+        android:paddingRight="140dp"
+        android:layout_centerHorizontal="true"
+        android:text="Get Opd"
+        android:background="@drawable/edittext_border"
+        android:backgroundTint="#FF4853"/>
+</RelativeLayout>
