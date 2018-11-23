@@ -1,29 +1,27 @@
 package blooddonate.com.blooddonate;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Spinner;
 
-public class BloodDetail extends AppCompatActivity {
+public class BloodRequestScreen extends AppCompatActivity {
 
-    TextView tvMale, tvFemale;
-    Button btnApositive, btnAnegative, btnBpositive, btnBnegative,
-            btnABpositive, btnABnegative, btnOpositive, btnOnegative;
-    Button btnDone;
+    Spinner spnBloodFor, spnCity;
+    Button btnApositive, btnBpositive, btnAnegative,
+            btnBnegative, btnOpositive, btnOnegative, btnABpositive, btnABnegative;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blood_detail);
+        setContentView(R.layout.activity_blood_request_screen);
 
+        // Spinner id Declaration
+        spnBloodFor = findViewById(R.id.spnBloodFor);
+        spnCity = findViewById(R.id.spnCity);
 
-        // Text View ids
-        tvMale = findViewById(R.id.tvMale);
-        tvFemale = findViewById(R.id.tvFemale);
-
+        // button for blood
         // Button Blood Group Id's
         btnApositive = findViewById(R.id.btnApositive);
         btnAnegative = findViewById(R.id.btnAnegative);
@@ -35,25 +33,22 @@ public class BloodDetail extends AppCompatActivity {
         btnABnegative = findViewById(R.id.btnABnegative);
 
 
-        // Button Done
-        btnDone = findViewById(R.id.btnDone);
-        btnDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BloodDetail.this, BloodRequestScreen.class);
-                startActivity(intent);
-            }
-        });
+        // function of Spinners
+        setBloodSpinner();
+        setCitySpinner();
+
     }
 
-    public void onCLickMale(View view) {
-        tvMale.setTextColor(getResources().getColor(R.color.colorAccent));
-        tvFemale.setTextColor(getResources().getColor(R.color.colorBlack));
+    public void setBloodSpinner() {
+        String[] strRelationForBlood = {"Friend", "Relatives", "Spouse", "Brother", "Sister"};
+        ArrayAdapter<String> bloodAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,strRelationForBlood);
+        spnBloodFor.setAdapter(bloodAdapter);
     }
 
-    public void onClickFemale(View view) {
-        tvFemale.setTextColor(getResources().getColor(R.color.colorAccent));
-        tvMale.setTextColor(getResources().getColor(R.color.colorBlack));
+    public void setCitySpinner() {
+        String[] strCity = {"Hyderabad", "Shukkur", "Karachi", "Lahore", "Islamabad", "Hala", "Peshawar"};
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,strCity);
+        spnCity.setAdapter(cityAdapter);
     }
 
     public void onClickBtnAPositive(View view) {

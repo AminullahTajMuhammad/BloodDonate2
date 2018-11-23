@@ -24,14 +24,16 @@ public class LoginScreen extends AppCompatActivity {
         fbLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(LoginScreen.this, BloodDetail.class);
+                startActivity(intent);
             }
         });
 
         googleLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(LoginScreen.this, BloodDetail.class);
+                startActivity(intent);
             }
         });
 
@@ -43,18 +45,5 @@ public class LoginScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    public void onClickFb(View view) {
-
-    }
-
-
-    public void onClickGoogle(View view) {
-
-    }
-
-    public void onClickNumber(View view) {
-
     }
 }

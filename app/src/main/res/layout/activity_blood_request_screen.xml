@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    tools:context=".BloodDetail">
-
+    tools:context=".BloodRequestScreen">
 
     <android.support.v7.widget.AppCompatImageButton
         android:id="@+id/btnBack"
@@ -18,7 +16,7 @@
         android:src="@drawable/ic_arrow_back_black_24dp"
         android:background="#FAFAFA"/>
 
-    <TextView android:id="@+id/tvBecomeDoner"
+    <TextView android:id="@+id/tvRequestBlood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/btnBack"
@@ -27,87 +25,58 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="#000000"
-        android:text="Become Doner"/>
+        android:text="Request For Blood"/>
 
-    <EditText
-        android:id="@+id/edtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvBecomeDoner"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/edittext_border"
-        android:hint="Name"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
-        android:padding="15dp" />
-
-    <EditText android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="15dp"
-        android:layout_below="@+id/edtName"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:hint="E-mail"
-        android:background="@drawable/edittext_border"/>
-
-    <TextView android:id="@+id/tvGender"
+    <TextView android:id="@+id/tvBloodFor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtEmail"
+        android:layout_below="@+id/tvRequestBlood"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="45dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#000000"
-        android:text="Gender"/>
+        android:text="Blood For"/>
 
-    <LinearLayout android:id="@+id/layoutGender"
+    <Spinner android:id="@+id/spnBloodFor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBloodFor"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edittext_border"
+        android:hint="Name"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:padding="5dp">
+    </Spinner>
+
+    <TextView android:id="@+id/tvCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/spnBloodFor"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="45dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="City Perfrences"/>
+
+    <Spinner android:id="@+id/spnCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCity"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tvGender"
-        android:orientation="horizontal"
+        android:background="@drawable/edittext_border"
+        android:hint="Name"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:paddingRight="10dp">
-
-        <TextView android:id="@+id/tvMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            android:layout_margin="10dp"
-            android:textColor="#000"
-            android:clickable="true"
-            android:onClick="onCLickMale"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text=" | "
-            android:textSize="20dp"
-            android:textColor="#000"/>
-
-
-        <TextView android:id="@+id/tvFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            android:textColor="#000"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:onClick="onClickFemale"/>
-
-    </LinearLayout>
+        android:layout_marginLeft="30dp"
+        android:padding="5dp">
+    </Spinner>
 
     <TextView android:id="@+id/tvSelectBloodGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutGender"
+        android:layout_below="@+id/spnCity"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="45dp"
         android:textSize="20sp"
@@ -210,34 +179,13 @@
             android:text="AB-" />
     </LinearLayout>
 
-    <CheckBox android:id="@+id/checkBoxBloodDetailed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:layout_below="@id/layoutBGroup2"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:textSize="20dp"
-        android:layout_below="@id/layoutBGroup2"
-        android:layout_toRightOf="@+id/checkBoxBloodDetailed"
-        android:text="Do you want to make your contact number visible for others"/>
-
-    <Button android:id="@+id/btnDone"
+    <Button android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxBloodDetailed"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:background="@drawable/button_border"
         android:backgroundTint="#FF4853"
-        android:text="Done"/>
+        android:text="Submit"/>
 
 </RelativeLayout>

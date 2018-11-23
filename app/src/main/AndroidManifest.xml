@@ -21,7 +21,8 @@
         <activity android:name=".LoginScreen" />
         <activity android:name=".BloodDetail" />
         <activity android:name=".VerifyNumber" />
-        <activity android:name=".DialogScreen"></activity>
+        <activity android:name=".DialogScreen" />
+        <activity android:name=".BloodRequestScreen"></activity>
     </application>
 
 </manifest>
