@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class BloodDetail extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class BloodDetail extends AppCompatActivity {
     Button btnApositive, btnAnegative, btnBpositive, btnBnegative,
             btnABpositive, btnABnegative, btnOpositive, btnOnegative;
     Button btnDone;
+    ImageButton imgBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,14 @@ public class BloodDetail extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(BloodDetail.this, BloodRequestScreen.class);
                 startActivity(intent);
+            }
+        });
+
+        imgBack = findViewById(R.id.btnBackBecomeDoner);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

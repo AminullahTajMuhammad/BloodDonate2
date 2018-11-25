@@ -1,17 +1,21 @@
 package blooddonate.com.blooddonate;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class BloodRequestScreen extends AppCompatActivity {
 
     Spinner spnBloodFor, spnCity;
-    Button btnApositive, btnBpositive, btnAnegative,
-            btnBnegative, btnOpositive, btnOnegative, btnABpositive, btnABnegative;
+    Button btnApositive, btnBpositive, btnAnegative, btnBnegative,
+            btnOpositive, btnOnegative, btnABpositive, btnABnegative;
+    Button btnSubmit;
+    ImageButton imgBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,22 @@ public class BloodRequestScreen extends AppCompatActivity {
         btnABpositive = findViewById(R.id.btnABpositive);
         btnABnegative = findViewById(R.id.btnABnegative);
 
+        imgBack = findViewById(R.id.btnBack);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        btnSubmit = findViewById(R.id.btnSubmit);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BloodRequestScreen.this, ExploreDonerScreen.class);
+                startActivity(intent);
+            }
+        });
 
         // function of Spinners
         setBloodSpinner();

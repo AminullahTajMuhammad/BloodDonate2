@@ -22,7 +22,8 @@
         <activity android:name=".BloodDetail" />
         <activity android:name=".VerifyNumber" />
         <activity android:name=".DialogScreen" />
-        <activity android:name=".BloodRequestScreen"></activity>
+        <activity android:name=".BloodRequestScreen" />
+        <activity android:name=".ExploreDonerScreen"></activity>
     </application>
 
 </manifest>
