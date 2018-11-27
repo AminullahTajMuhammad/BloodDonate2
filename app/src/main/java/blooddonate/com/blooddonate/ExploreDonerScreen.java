@@ -34,14 +34,14 @@ public class ExploreDonerScreen extends AppCompatActivity {
     public void intializeData() {
         data.add(new AllDonerData("John", "New York", "B+"));
         data.add(new AllDonerData("Cramer", "Hong Kong", "B-"));
-        data.add(new AllDonerData("John", "Maxico", "O+"));
-        data.add(new AllDonerData("John", "Sillcon Velly", "A+"));
-        data.add(new AllDonerData("John", "America", "AB+"));
-        data.add(new AllDonerData("John", "Islamabad", "B+"));
-        data.add(new AllDonerData("John", "Lahore", "O+"));
-        data.add(new AllDonerData("John", "Zambia", "AB-"));
-        data.add(new AllDonerData("John", "Bangladesh", "AB+"));
-        data.add(new AllDonerData("John", "Abu Dhabi", "B-"));
+        data.add(new AllDonerData("Amanda", "Maxico", "O+"));
+        data.add(new AllDonerData("Handler", "Sillcon Velly", "A+"));
+        data.add(new AllDonerData("Kressy", "America", "AB+"));
+        data.add(new AllDonerData("Tailor Swift", "Islamabad", "B+"));
+        data.add(new AllDonerData("Henry", "Lahore", "O+"));
+        data.add(new AllDonerData("Handler", "Zambia", "AB-"));
+        data.add(new AllDonerData("Kressy", "Bangladesh", "AB+"));
+        data.add(new AllDonerData("Handler", "Abu Dhabi", "B-"));
 
     }
 }
