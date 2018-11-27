@@ -36,5 +36,4 @@ public class AllDonerData {
         this.bloodGroup = bloodGroup;
     }
 
-
 }
