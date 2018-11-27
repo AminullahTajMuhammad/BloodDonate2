@@ -7,9 +7,8 @@ public class NewsFeedData {
     String cityName;
     String desc;
 
-    public NewsFeedData(String name, int profilePic, String updateTime, String cityName, String desc) {
+    public NewsFeedData(String name, String updateTime, String cityName, String desc) {
         this.name = name;
-        this.profilePic = profilePic;
         this.updateTime = updateTime;
         this.cityName = cityName;
         this.desc = desc;
