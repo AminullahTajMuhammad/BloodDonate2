@@ -6,9 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".NewsFeedScreen">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/layoutToolbar"
+        android:background="@drawable/mainactivitygradient">
+
+        <ImageButton android:id="@+id/btnList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_format_align_left_black_24dp"
+            android:background="@android:color/transparent"
+            android:layout_margin="10dp" />
+
+        <TextView android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="B Hero"
+            android:layout_weight="10"
+            android:textStyle="bold"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorGray"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search_black_24dp"
+            android:layout_weight="10"
+            android:background="@android:color/transparent"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/layoutToolbar"
         android:id="@+id/newsFeedRecycler">
     </android.support.v7.widget.RecyclerView>
 
