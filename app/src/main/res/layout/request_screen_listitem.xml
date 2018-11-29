@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:id="@+id/imgRequestPic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout android:id="@+id/layout"
+            android:layout_toRightOf="@+id/imgRequestPic"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/tvRequestName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView android:id="@+id/tvRequestCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button android:id="@+id/btnRequestAskForHelp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Ask For Help"
+                android:textColor="@color/colorLightAccent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/border"/>
+
+
+        </LinearLayout>
+
+        <Button android:id="@+id/btnRequestBloodGroup"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/layout"
+            android:layout_alignBottom="@+id/layout"
+            android:background="@drawable/button_border"
+            android:layout_margin="5dp"
+            android:text="A+"
+            android:textColor="@color/colorLightAccent"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

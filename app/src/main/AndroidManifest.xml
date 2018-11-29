@@ -25,7 +25,8 @@
         <activity android:name=".BloodRequestScreen" />
         <activity android:name=".ExploreDonerScreen" />
         <activity android:name=".NewsFeedScreen" />
-        <activity android:name=".NewsFeedAdapter"></activity>
+        <activity android:name=".NewsFeedAdapter" />
+        <activity android:name=".RequestScreen"></activity>
     </application>
 
 </manifest>
