@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".ProfileCheckScreen">
+
+    <include layout="@layout/toolbar_layput"/>
+
+    <ImageView android:id="@+id/imgCheckProfile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/toolbar"
+        android:src="@drawable/seven"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout android:id="@+id/layoutProfileDonated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgCheckProfile"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDonatedNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="14"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorLightAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView android:id="@+id/tvDonated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DONATED"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/layoutProfileRequested"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/layoutProfileDonated"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRequestNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="145"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorLightAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView android:id="@+id/tvRequested"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REQUESTED"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutProfileSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/layoutProfileRequested"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <ImageButton android:id="@+id/imgBtnLike"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_favorite_border_black_24dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/tvSaveImgBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="SAVE"
+            android:layout_marginLeft="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutProfileDonated"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/imgCheckProfile"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHeroGroup"
+            android:layout_width="14dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_border_color_ancent"
+            android:text="HERO GROUP"
+            android:textColor="@color/colorGray" />
+
+        <Button
+            android:id="@+id/btnContact"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="CONTACT"
+            android:layout_marginRight="25dp"
+            android:textColor="@color/colorLightAccent"
+            android:background="@drawable/border"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgCheckProfile"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="1dp"
+        android:elevation="1dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/profileRecyclerView">
+        </android.support.v7.widget.RecyclerView>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

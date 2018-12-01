@@ -1,14 +1,18 @@
 package blooddonate.com.blooddonate;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
 public class RequestScreen extends AppCompatActivity {
 
+    ImageButton imgBtnOption;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
     RequestScreenAdapter adapter;
@@ -19,6 +23,15 @@ public class RequestScreen extends AppCompatActivity {
         setContentView(R.layout.activity_request_screen);
 
         recyclerView = findViewById(R.id.requestRecycler);
+        imgBtnOption = findViewById(R.id.btnOption);
+        imgBtnOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RequestScreen.this, ProfileCheckScreen.class);
+                startActivity(intent);
+            }
+        });
+
         setData();
         setRecyclerView();
     }

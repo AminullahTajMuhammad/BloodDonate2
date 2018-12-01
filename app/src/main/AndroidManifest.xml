@@ -26,7 +26,8 @@
         <activity android:name=".ExploreDonerScreen" />
         <activity android:name=".NewsFeedScreen" />
         <activity android:name=".NewsFeedAdapter" />
-        <activity android:name=".RequestScreen"></activity>
+        <activity android:name=".RequestScreen" />
+        <activity android:name=".ProfileCheckScreen"></activity>
     </application>
 
 </manifest>

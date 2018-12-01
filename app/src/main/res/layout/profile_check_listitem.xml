@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cardView"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="1dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView android:id="@+id/profileCheckPic"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/four"
+            android:layout_margin="10dp"/>
+
+        <TextView android:id="@+id/tv_Check_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/profileCheckPic"
+            android:text="Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
+        <TextView android:id="@+id/tvUpdateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/profileCheckPic"
+            android:layout_below="@+id/tv_Check_Name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:text="16 mins ago"/>
+
+        <TextView android:id="@+id/tv_Check_City"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvUpdateTime"
+            android:layout_below="@+id/tv_Check_Name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Hyderabad"/>
+
+        <TextView android:id="@+id/tvCheckProfileDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Hello World"
+            android:layout_below="@+id/tv_Check_City"/>
+
+        <ImageView android:id="@+id/imgCheckProfileImage"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@+id/tvCheckProfileDescription"
+            android:src="@drawable/picture_second"/>
+
+        <ImageButton android:id="@+id/btnHeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_favorite_border_black_24dp"
+            android:background="@android:color/transparent"
+            android:layout_below="@+id/imgCheckProfileImage"/>
+
+        <ImageButton android:id="@+id/btnCheckProfileComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chat_bubble_outline_black_24dp"
+            android:background="@android:color/transparent"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/imgCheckProfileImage"
+            android:layout_toRightOf="@+id/btnHeart"/>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
