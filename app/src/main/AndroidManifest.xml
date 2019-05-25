@@ -9,25 +9,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".screens.Splash">
+        <activity android:name=".screens.Splash"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".screens.Stepper" />
-        <activity android:name=".screens.LoginScreen" />
-        <activity android:name=".screens.BloodDetail" />
-        <activity android:name=".dialogs.VerifyNumber" />
-        <activity android:name=".screens.DialogScreen" />
-        <activity android:name=".screens.BloodRequestScreen" />
-        <activity android:name=".screens.ExploreDonerScreen" />
-        <activity android:name=".screens.NewsFeedScreen" />
-        <activity android:name=".adapters.NewsFeedAdapter" />
-        <activity android:name=".screens.RequestScreen" />
-        <activity android:name=".screens.ProfileCheckScreen"></activity>
+        <activity
+            android:name=".screens.MainActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".screens.Stepper"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".screens.LoginScreen"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".screens.BloodDetail"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".dialogs.VerifyNumber"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".screens.DialogScreen"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".screens.BloodRequestScreen"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".screens.ExploreDonerScreen"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".screens.NewsFeedScreen"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".screens.RequestScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".screens.ProfileCheckScreen"
+        android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -43,7 +43,7 @@ public class BloodDetail extends AppCompatActivity {
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BloodDetail.this, BloodRequestScreen.class);
+                Intent intent = new Intent(BloodDetail.this, MainActivity.class);
                 startActivity(intent);
             }
         });
