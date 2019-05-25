@@ -1,16 +1,17 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.screens;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import blooddonate.com.blooddonate.models.NewsFeedData;
+import blooddonate.com.blooddonate.adapters.ProfileCheckAdapter;
+import blooddonate.com.blooddonate.R;
 
 public class ProfileCheckScreen extends AppCompatActivity {
 

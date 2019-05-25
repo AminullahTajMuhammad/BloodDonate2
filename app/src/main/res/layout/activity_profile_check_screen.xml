@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="vertical"
-    tools:context=".ProfileCheckScreen">
+    tools:context=".screens.ProfileCheckScreen">
 
     <include layout="@layout/toolbar_layput"/>
 

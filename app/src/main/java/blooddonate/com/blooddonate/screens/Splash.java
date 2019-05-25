@@ -1,10 +1,11 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.screens;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.animation.Animation;
+
+import blooddonate.com.blooddonate.R;
 
 public class Splash extends AppCompatActivity {
 

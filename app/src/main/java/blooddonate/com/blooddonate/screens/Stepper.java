@@ -1,4 +1,4 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.screens;
 
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import blooddonate.com.blooddonate.R;
+import blooddonate.com.blooddonate.adapters.SliderAdapter;
+
 public class Stepper extends AppCompatActivity {
     private ViewPager viewPager;
     private LinearLayout linearLayout;
@@ -18,11 +21,13 @@ public class Stepper extends AppCompatActivity {
     private Button btnBack;
     private Button btnNext;
     private int currentPage, finishPage;
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stepper);
+
 
         viewPager = findViewById(R.id.viewPager);
         linearLayout = findViewById(R.id.dotslayout);
@@ -39,11 +44,15 @@ public class Stepper extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                count++;
                 viewPager.setCurrentItem(currentPage + 1);
                 if(finishPage-1 == currentPage) {
-                    Intent intent = new Intent(Stepper.this, LoginScreen.class);
-                    startActivity(intent);
-                    finish();
+                     if(count == mDots.length) {
+                         Intent intent = new Intent(Stepper.this, LoginScreen.class);
+                         startActivity(intent);
+                         finish();
+                     }
+
                 }
             }
         });

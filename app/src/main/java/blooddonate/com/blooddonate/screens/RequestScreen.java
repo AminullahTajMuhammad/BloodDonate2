@@ -1,4 +1,4 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.screens;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+
+import blooddonate.com.blooddonate.models.AllDonerData;
+import blooddonate.com.blooddonate.R;
+import blooddonate.com.blooddonate.adapters.RequestScreenAdapter;
 
 public class RequestScreen extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,18 +10,21 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ProfileCheckAdapter extends RecyclerView.Adapter<ProfileCheckAdapter.MyViewHolder> {
+import blooddonate.com.blooddonate.models.NewsFeedData;
+import blooddonate.com.blooddonate.R;
 
-    ArrayList<NewsFeedData> data = new ArrayList<>();
+public class NewsFeedAdapter extends RecyclerView.Adapter<NewsFeedAdapter.MyViewHolder> {
 
-    public ProfileCheckAdapter(ArrayList<NewsFeedData> data) {
+    ArrayList<NewsFeedData> data = new ArrayList<NewsFeedData>();
+
+    public NewsFeedAdapter(ArrayList<NewsFeedData> data) {
         this.data = data;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.profile_check_listitem,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_news_feed_lisitem,viewGroup,false);
         return new MyViewHolder(view);
     }
 
@@ -47,8 +50,6 @@ public class ProfileCheckAdapter extends RecyclerView.Adapter<ProfileCheckAdapte
         } else if(data.get(i).getName().equals("Henry")) {
             myViewHolder.imgProfilePic.setImageResource(R.drawable.seven);
         }
-
-
     }
 
     @Override
@@ -57,20 +58,18 @@ public class ProfileCheckAdapter extends RecyclerView.Adapter<ProfileCheckAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
         TextView tvName, tvUpdateTime, tvCityName, tvDescription;
         ImageView imgProfilePic;
         ImageView imgImage;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tv_Check_Name);
-            tvCityName = itemView.findViewById(R.id.tv_Check_City);
+            tvName = itemView.findViewById(R.id.tv_news_Name);
+            tvCityName = itemView.findViewById(R.id.tv_news_City);
             tvUpdateTime = itemView.findViewById(R.id.tvUpdateTime);
-            tvDescription = itemView.findViewById(R.id.tvCheckProfileDescription);
-            imgProfilePic = itemView.findViewById(R.id.profileCheckPic);
-            imgImage = itemView.findViewById(R.id.imgRequestPic);
-
+            tvDescription = itemView.findViewById(R.id.tvDescription);
+            imgProfilePic = itemView.findViewById(R.id.profilePic);
+            imgImage = itemView.findViewById(R.id.imgImage);
         }
     }
 }

@@ -1,31 +1,32 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.screens;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Spinner;
+import android.widget.TextView;
 
-public class BloodRequestScreen extends AppCompatActivity {
+import blooddonate.com.blooddonate.R;
 
-    Spinner spnBloodFor, spnCity;
-    Button btnApositive, btnBpositive, btnAnegative, btnBnegative,
-            btnOpositive, btnOnegative, btnABpositive, btnABnegative;
-    Button btnSubmit;
+public class BloodDetail extends AppCompatActivity {
+
+    TextView tvMale, tvFemale;
+    Button btnApositive, btnAnegative, btnBpositive, btnBnegative,
+            btnABpositive, btnABnegative, btnOpositive, btnOnegative;
+    Button btnDone;
     ImageButton imgBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blood_request_screen);
+        setContentView(R.layout.activity_blood_detail);
 
-        // Spinner id Declaration
-        spnBloodFor = findViewById(R.id.spnBloodFor);
-        spnCity = findViewById(R.id.spnCity);
 
-        // button for blood
+        // Text View ids
+        tvMale = findViewById(R.id.tvMale);
+        tvFemale = findViewById(R.id.tvFemale);
+
         // Button Blood Group Id's
         btnApositive = findViewById(R.id.btnApositive);
         btnAnegative = findViewById(R.id.btnAnegative);
@@ -36,39 +37,34 @@ public class BloodRequestScreen extends AppCompatActivity {
         btnABpositive = findViewById(R.id.btnABpositive);
         btnABnegative = findViewById(R.id.btnABnegative);
 
-        imgBack = findViewById(R.id.btnBack);
+
+        // Button Done
+        btnDone = findViewById(R.id.btnDone);
+        btnDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BloodDetail.this, BloodRequestScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        imgBack = findViewById(R.id.btnBackBecomeDoner);
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-        btnSubmit = findViewById(R.id.btnSubmit);
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BloodRequestScreen.this, ExploreDonerScreen.class);
-                startActivity(intent);
-            }
-        });
-
-        // function of Spinners
-        setBloodSpinner();
-        setCitySpinner();
-
     }
 
-    public void setBloodSpinner() {
-        String[] strRelationForBlood = {"Friend", "Relatives", "Spouse", "Brother", "Sister"};
-        ArrayAdapter<String> bloodAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,strRelationForBlood);
-        spnBloodFor.setAdapter(bloodAdapter);
+    public void onCLickMale(View view) {
+        tvMale.setTextColor(getResources().getColor(R.color.colorAccent));
+        tvFemale.setTextColor(getResources().getColor(R.color.colorBlack));
     }
 
-    public void setCitySpinner() {
-        String[] strCity = {"Hyderabad", "Shukkur", "Karachi", "Lahore", "Islamabad", "Hala", "Peshawar"};
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,strCity);
-        spnCity.setAdapter(cityAdapter);
+    public void onClickFemale(View view) {
+        tvFemale.setTextColor(getResources().getColor(R.color.colorAccent));
+        tvMale.setTextColor(getResources().getColor(R.color.colorBlack));
     }
 
     public void onClickBtnAPositive(View view) {

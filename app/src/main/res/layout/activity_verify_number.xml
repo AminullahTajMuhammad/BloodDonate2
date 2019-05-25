@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerifyNumber">
+    tools:context=".dialogs.VerifyNumber">
     <android.support.v7.widget.AppCompatImageButton
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"

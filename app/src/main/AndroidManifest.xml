@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Splash">
+        <activity android:name=".screens.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,17 +17,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".Stepper" />
-        <activity android:name=".LoginScreen" />
-        <activity android:name=".BloodDetail" />
-        <activity android:name=".VerifyNumber" />
-        <activity android:name=".DialogScreen" />
-        <activity android:name=".BloodRequestScreen" />
-        <activity android:name=".ExploreDonerScreen" />
-        <activity android:name=".NewsFeedScreen" />
-        <activity android:name=".NewsFeedAdapter" />
-        <activity android:name=".RequestScreen" />
-        <activity android:name=".ProfileCheckScreen"></activity>
+        <activity android:name=".screens.Stepper" />
+        <activity android:name=".screens.LoginScreen" />
+        <activity android:name=".screens.BloodDetail" />
+        <activity android:name=".dialogs.VerifyNumber" />
+        <activity android:name=".screens.DialogScreen" />
+        <activity android:name=".screens.BloodRequestScreen" />
+        <activity android:name=".screens.ExploreDonerScreen" />
+        <activity android:name=".screens.NewsFeedScreen" />
+        <activity android:name=".adapters.NewsFeedAdapter" />
+        <activity android:name=".screens.RequestScreen" />
+        <activity android:name=".screens.ProfileCheckScreen"></activity>
     </application>
 
 </manifest>

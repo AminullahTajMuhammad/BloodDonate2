@@ -1,4 +1,4 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.models;
 
 public class AllDonerData {
     String name;

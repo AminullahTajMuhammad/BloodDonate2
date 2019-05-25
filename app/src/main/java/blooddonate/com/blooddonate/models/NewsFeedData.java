@@ -1,11 +1,11 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.models;
 
 public class NewsFeedData {
     String name;
     int profilePic;
     String updateTime;
     String cityName;
-    String desc;
+    public String desc;
 
     public NewsFeedData(String name, String updateTime, String cityName, String desc) {
         this.name = name;

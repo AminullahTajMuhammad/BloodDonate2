@@ -1,4 +1,4 @@
-package blooddonate.com.blooddonate;
+package blooddonate.com.blooddonate.screens;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+
+import blooddonate.com.blooddonate.models.NewsFeedData;
+import blooddonate.com.blooddonate.R;
+import blooddonate.com.blooddonate.adapters.NewsFeedAdapter;
 
 public class NewsFeedScreen extends AppCompatActivity {
 
