@@ -34,36 +34,26 @@ public class Stepper extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack);
         btnNext = findViewById(R.id.btnNext);
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(currentPage - 1);
-            }
-        });
-
+//        btnBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                viewPager.setCurrentItem(currentPage - 1);
+//            }
+//        });
+        viewPager.setCurrentItem(currentPage + 1);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count++;
-                viewPager.setCurrentItem(currentPage + 1);
-                if(finishPage-1 == currentPage) {
-                     if(count == mDots.length) {
-                         Intent intent = new Intent(Stepper.this, LoginScreen.class);
-                         startActivity(intent);
-                         finish();
-                     }
-
-                }
+                startActivity(new Intent(Stepper.this, LoginScreen.class));
+                finish();
             }
         });
-
         Madapter = new SliderAdapter(this);
         viewPager.setAdapter(Madapter);
 
         adddotsIndicator(0);
 
         viewPager.addOnPageChangeListener(viewListner);
-
     }
 
 
@@ -100,27 +90,18 @@ public class Stepper extends AppCompatActivity {
             if(i == 0) {
                 btnBack.setEnabled(false);
                 btnNext.setEnabled(true);
-                btnBack.setVisibility(View.INVISIBLE);
-
-                btnNext.setText("Next");
                 btnBack.setText("");
 
             } else if(i == mDots.length-1) {
                 btnBack.setEnabled(true);
                 btnNext.setEnabled(true);
-                btnBack.setVisibility(View.VISIBLE);
-
-                btnBack.setText("Back");
+                btnNext.setVisibility(View.VISIBLE);
                 btnNext.setText("Finish");
 
 
             } else {
                 btnBack.setEnabled(true);
                 btnNext.setEnabled(true);
-                btnBack.setVisibility(View.VISIBLE);
-
-                btnBack.setText("Back");
-                btnNext.setText("Next");
             }
 
         }
