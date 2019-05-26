@@ -34,12 +34,6 @@ public class Stepper extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack);
         btnNext = findViewById(R.id.btnNext);
 
-//        btnBack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                viewPager.setCurrentItem(currentPage - 1);
-//            }
-//        });
         viewPager.setCurrentItem(currentPage + 1);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +84,7 @@ public class Stepper extends AppCompatActivity {
             if(i == 0) {
                 btnBack.setEnabled(false);
                 btnNext.setEnabled(true);
+                btnNext.setVisibility(View.INVISIBLE);
                 btnBack.setText("");
 
             } else if(i == mDots.length-1) {
@@ -102,6 +97,7 @@ public class Stepper extends AppCompatActivity {
             } else {
                 btnBack.setEnabled(true);
                 btnNext.setEnabled(true);
+                btnNext.setVisibility(View.INVISIBLE);
             }
 
         }

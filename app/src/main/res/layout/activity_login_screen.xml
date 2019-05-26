@@ -1,128 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/mainactivitygradient"
-    tools:context=".screens.LoginScreen">
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/picture_one"
-        android:contentDescription="@string/todo" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fefefe"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/customshapedlayout">
+        android:background="@drawable/mainactivitygradient"
+        android:layout_height="300dp">
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login_and_register"
-            android:textColor="#0A0819"
-            android:layout_marginTop="60dp"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:id="@+id/tvLogin"
-            android:layout_centerHorizontal="true"/>
-
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/blood_share"
             android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:layout_below="@+id/tvLogin"
-            android:layout_marginTop="40dp"
-            android:id="@+id/layoutFB"
-            android:background="@drawable/fb_round_shape"
-            android:backgroundTint="#464eba"
-            android:clickable="true"
-            android:padding="5dp">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:src="@drawable/fblogo1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Facebook"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="100dp"
-                android:textColor="#fff"
-                />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:id="@+id/layoutGoogle"
-            android:layout_below="@+id/layoutFB"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/border"
-            android:clickable="true"
-            android:padding="5dp">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:src="@drawable/google"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Google"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="100dp"
-                android:textColor="#000000"
-
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:id="@+id/layoutNumber"
-            android:layout_below="@+id/layoutGoogle"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            android:background="@drawable/border"
-            android:padding="5dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_apps_black_24dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="100dp"
-                android:textColor="#000000"
-                />
-        </LinearLayout>
+            android:layout_marginBottom="20dp"/>
     </RelativeLayout>
+
+    <ImageView android:id="@+id/imgOval"
+        android:layout_marginTop="250dp"
+        android:src="@drawable/oval_shape"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <TextView android:id="@+id/tvLoginAndRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login and Register"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/imgOval"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/edtUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/tvLoginAndRegister">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Name"
+            android:backgroundTint="@color/colorLightAccent"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/edtUserName">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:backgroundTint="@color/colorLightAccent"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/colorLightAccent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/edtPassword"
+        android:text="Login"/>
+
+    <TextView android:id="@+id/tvDontHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_toLeftOf="@+id/tvRegisterHere"
+        android:text="Or" />
+
+    <TextView android:id="@+id/tvRegisterHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register Here"
+        android:textColor="@color/colorLightAccent"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnLogin"/>
+
+
 </RelativeLayout>
