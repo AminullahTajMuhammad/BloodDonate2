@@ -1,9 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".screens.RegisterScreen">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fefefe"
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/mainactivitygradient"
+        android:layout_height="230dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/blood_share"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
+
+    <ImageView android:id="@+id/imgOval"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/oval_shape"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <TextView android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register Here"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/imgOval"
+        tools:ignore="DuplicateIds" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/edtRegisterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/tvRegister">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:backgroundTint="@color/colorLightAccent"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/edtRegisterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/edtRegisterName">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:backgroundTint="@color/colorLightAccent"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/edtRegisterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/edtRegisterEmail">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:backgroundTint="@color/colorLightAccent"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/edtRegisterNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/edtRegisterPassword">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Number"
+            android:backgroundTint="@color/colorLightAccent"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/colorLightAccent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/edtRegisterNumber"
+        android:text="Register"/>
+
+    <TextView android:id="@+id/tvRDontHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_toLeftOf="@+id/tvLoginHere"
+        android:text="Or" />
+
+    <TextView android:id="@+id/tvLoginHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login Here"
+        android:textColor="@color/colorLightAccent"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnLogin"/>
+
+
+</RelativeLayout>

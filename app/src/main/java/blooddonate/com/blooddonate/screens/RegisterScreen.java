@@ -3,6 +3,8 @@ package blooddonate.com.blooddonate.screens;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import blooddonate.com.blooddonate.R;
+
 public class RegisterScreen extends AppCompatActivity {
 
     @Override
