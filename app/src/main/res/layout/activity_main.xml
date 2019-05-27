@@ -110,7 +110,7 @@
         android:textStyle="bold"
         android:padding="6dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUserProfile"
+        app:layout_constraintTop_toBottomOf="@+id/btnYourProfile"
         android:layout_marginRight="55dp"
         tools:ignore="MissingConstraints" />
 
