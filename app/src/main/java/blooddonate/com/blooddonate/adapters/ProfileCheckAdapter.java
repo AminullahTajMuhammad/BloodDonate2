@@ -35,22 +35,6 @@ public class ProfileCheckAdapter extends RecyclerView.Adapter<ProfileCheckAdapte
         myViewHolder.tvUpdateTime.setText(data.get(i).getUpdateTime());
         myViewHolder.tvDescription.setText(data.get(i).desc);
 
-        if (data.get(i).getName().equals("Amanda")) {
-            myViewHolder.imgProfilePic.setImageResource(R.drawable.picture_one);
-        } else if(data.get(i).getName().equals("John")) {
-            myViewHolder.imgProfilePic.setImageResource(R.drawable.picture_second);
-        } else if(data.get(i).getName().equals("Handler")) {
-            myViewHolder.imgProfilePic.setImageResource(R.drawable.seven);
-        } else if(data.get(i).getName().equals("Kressy")) {
-            myViewHolder.imgProfilePic.setImageResource(R.drawable.four);
-        } else if(data.get(i).getName().equals("Tailor Swift")) {
-            myViewHolder.imgProfilePic.setImageResource(R.drawable.five);
-        } else if(data.get(i).getName().equals("Cramer")) {
-            myViewHolder.imgProfilePic.setImageResource(R.drawable.six);
-        } else if(data.get(i).getName().equals("Henry")) {
-            myViewHolder.imgProfilePic.setImageResource(R.drawable.seven);
-        }
-
 
     }
 
@@ -63,7 +47,6 @@ public class ProfileCheckAdapter extends RecyclerView.Adapter<ProfileCheckAdapte
 
         TextView tvName, tvUpdateTime, tvCityName, tvDescription;
         ImageView imgProfilePic;
-        ImageView imgImage;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,8 +55,6 @@ public class ProfileCheckAdapter extends RecyclerView.Adapter<ProfileCheckAdapte
             tvUpdateTime = itemView.findViewById(R.id.tvUpdateTime);
             tvDescription = itemView.findViewById(R.id.tvCheckProfileDescription);
             imgProfilePic = itemView.findViewById(R.id.profileCheckPic);
-            imgImage = itemView.findViewById(R.id.imgRequestPic);
-
         }
     }
 }

@@ -12,7 +12,7 @@
         android:id="@+id/relativeToolbar"
         android:background="@color/colorLightAccent">
 
-        <android.support.v7.widget.AppCompatImageButton
+        <ImageButton
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

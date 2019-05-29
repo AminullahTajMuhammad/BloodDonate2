@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,18 +13,18 @@ import java.util.ArrayList;
 import blooddonate.com.blooddonate.models.AllDonerData;
 import blooddonate.com.blooddonate.R;
 
-public class RequestScreenAdapter extends RecyclerView.Adapter<RequestScreenAdapter.MyViewHolder> {
+public class SmaeDonerScreenAdapter extends RecyclerView.Adapter<SmaeDonerScreenAdapter.MyViewHolder> {
 
     ArrayList<AllDonerData> requestScreenData = new ArrayList<>();
 
-    public RequestScreenAdapter(ArrayList<AllDonerData> requestScreenData) {
+    public SmaeDonerScreenAdapter(ArrayList<AllDonerData> requestScreenData) {
         this.requestScreenData = requestScreenData;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.request_screen_listitem,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.same_doner_screen_listitem,viewGroup,false);
         return new MyViewHolder(view);
     }
 
@@ -37,22 +36,6 @@ public class RequestScreenAdapter extends RecyclerView.Adapter<RequestScreenAdap
         myViewHolder.btnNumber.setText(requestScreenData.get(i).getMobileNumber());
         myViewHolder.btnbloodGroup.setText(requestScreenData.get(i).getBloodGroup());
 
-        if (requestScreenData.get(i).getName().equals("Amanda")) {
-            myViewHolder.imgPic.setImageResource(R.drawable.picture_one);
-        } else if(requestScreenData.get(i).getName().equals("John")) {
-            myViewHolder.imgPic.setImageResource(R.drawable.picture_second);
-        } else if(requestScreenData.get(i).getName().equals("Handler")) {
-            myViewHolder.imgPic.setImageResource(R.drawable.seven);
-        } else if(requestScreenData.get(i).getName().equals("Kressy")) {
-            myViewHolder.imgPic.setImageResource(R.drawable.four);
-        } else if(requestScreenData.get(i).getName().equals("Tailor Swift")) {
-            myViewHolder.imgPic.setImageResource(R.drawable.five);
-        } else if(requestScreenData.get(i).getName().equals("Cramer")) {
-            myViewHolder.imgPic.setImageResource(R.drawable.six);
-        } else if(requestScreenData.get(i).getName().equals("Henry")) {
-            myViewHolder.imgPic.setImageResource(R.drawable.seven);
-        }
-
     }
 
     @Override
@@ -62,7 +45,6 @@ public class RequestScreenAdapter extends RecyclerView.Adapter<RequestScreenAdap
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvCityName;
-        ImageView imgPic;
         Button btnNumber, btnbloodGroup;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -71,7 +53,6 @@ public class RequestScreenAdapter extends RecyclerView.Adapter<RequestScreenAdap
             tvCityName = itemView.findViewById(R.id.tvRequestCity);
             btnNumber = itemView.findViewById(R.id.btnRequestNumber);
             btnbloodGroup = itemView.findViewById(R.id.btnRequestBloodGroup);
-            imgPic = itemView.findViewById(R.id.imgRequestPic);
         }
     }
 }

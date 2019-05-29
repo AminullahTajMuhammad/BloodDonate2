@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screens.UsersRequestScreen">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/relativeToolbar"
+        android:background="@color/colorLightAccent"
+        tools:ignore="MissingConstraints">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btnUserRequestScreenBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/back_arrow_white"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeToolbar"
+        app:cardCornerRadius="2dp"
+        android:elevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:id="@+id/userRequestRecycler">
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

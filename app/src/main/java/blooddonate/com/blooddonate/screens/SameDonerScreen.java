@@ -1,6 +1,5 @@
 package blooddonate.com.blooddonate.screens;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,13 +11,15 @@ import java.util.ArrayList;
 
 import blooddonate.com.blooddonate.models.AllDonerData;
 import blooddonate.com.blooddonate.R;
-import blooddonate.com.blooddonate.adapters.RequestScreenAdapter;
+import blooddonate.com.blooddonate.adapters.SmaeDonerScreenAdapter;
 
 public class SameDonerScreen extends AppCompatActivity {
 
+    ImageButton imgBack;
+
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-    RequestScreenAdapter adapter;
+    SmaeDonerScreenAdapter adapter;
     ArrayList<AllDonerData> requestScreenData = new ArrayList<>();
 
     @Override
@@ -28,12 +29,20 @@ public class SameDonerScreen extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.requestRecycler);
 
+        imgBack = findViewById(R.id.btnBack);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         setData();
         setRecyclerView();
     }
 
     public void setRecyclerView() {
-        adapter = new RequestScreenAdapter(requestScreenData);
+        adapter = new SmaeDonerScreenAdapter(requestScreenData);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
