@@ -1,7 +1,9 @@
 package blooddonate.com.blooddonate.screens;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -19,6 +21,34 @@ public class MainActivity extends AppCompatActivity {
 
         findViewByIds();
 
+        btnMakeRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickCreateRequest();
+            }
+        });
+
+        btnSameDoner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickSameDoners();
+            }
+        });
+
+        btnYourProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickUserProfile();
+            }
+        });
+
+        btnYourRequests.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickYourRequests();
+            }
+        });
+
     }
 
     private void findViewByIds() {
@@ -34,6 +64,22 @@ public class MainActivity extends AppCompatActivity {
         btnYourProfile = findViewById(R.id.btnYourProfile);
         tvYourProfile = findViewById(R.id.tvYourProfile);
 
+    }
+
+    private void onClickSameDoners() {
+        startActivity(new Intent(MainActivity.this, SameDonerScreen.class));
+    }
+
+    private void onClickYourRequests() {
+        startActivity(new Intent(MainActivity.this, UsersRequestScreen.class));
+    }
+
+    private void onClickUserProfile() {
+        startActivity(new Intent(MainActivity.this, UserProfileScreen.class));
+    }
+
+    private void onClickCreateRequest() {
+        startActivity(new Intent(MainActivity.this, BloodRequestScreen.class));
     }
 
 

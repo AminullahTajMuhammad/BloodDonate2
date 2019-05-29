@@ -14,27 +14,19 @@ import blooddonate.com.blooddonate.models.AllDonerData;
 import blooddonate.com.blooddonate.R;
 import blooddonate.com.blooddonate.adapters.RequestScreenAdapter;
 
-public class RequestScreen extends AppCompatActivity {
+public class SameDonerScreen extends AppCompatActivity {
 
-    ImageButton imgBtnOption;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
     RequestScreenAdapter adapter;
     ArrayList<AllDonerData> requestScreenData = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request_screen);
+        setContentView(R.layout.activity_same_doner_screen);
 
         recyclerView = findViewById(R.id.requestRecycler);
-        imgBtnOption = findViewById(R.id.btnOption);
-        imgBtnOption.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RequestScreen.this, ProfileCheckScreen.class);
-                startActivity(intent);
-            }
-        });
 
         setData();
         setRecyclerView();
