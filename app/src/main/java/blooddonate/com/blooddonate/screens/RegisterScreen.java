@@ -29,6 +29,12 @@ public class RegisterScreen extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
+    String mName = "";
+    String mEmail = "";
+    String mPassword = "";
+    String mNumber = "";
+
+
     TextInputEditText edtName, edtEmail, edtPassword, edtNumber;
     TextView tvLoginHere;
     Button btnRegister;
@@ -108,19 +114,41 @@ public class RegisterScreen extends AppCompatActivity {
         user.put("Number", number);
         user.put("User_ID", mAuth.getCurrentUser().getUid().toString());
 
+        mName = name;
+        mEmail = email;
+        mPassword = password;
+        mNumber = number;
+
         db.collection("users").document(mAuth.getCurrentUser().getUid()).set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(RegisterScreen.this, "Data is Successfully added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterScreen.this, "Registered Account", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegisterScreen.this, BloodDetail.class);
+                        intent.putExtra("Name", mName);
+                        intent.putExtra("Email", mEmail);
+                        intent.putExtra("Password", mPassword);
+                        intent.putExtra("Number", mNumber);
+                        intent.putExtra("UID",mAuth.getCurrentUser().getUid().toString());
+                        startActivity(intent);
+                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(RegisterScreen.this, "Data added failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterScreen.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
+////        // Send Data to BloodDetailed Screen
+//        Intent intent = new Intent(RegisterScreen.this, BloodDetail.class);
+//        intent.putExtra("Name", name);
+//        intent.putExtra("Email", email);
+//        intent.putExtra("Password", password);
+//        intent.putExtra("Number", number);
+//        intent.putExtra("UID",mAuth.getCurrentUser().getUid().toString());
     }
 
     private void findViewByIds() {

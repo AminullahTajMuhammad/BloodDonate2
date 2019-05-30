@@ -1,6 +1,7 @@
 package blooddonate.com.blooddonate.screens;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +11,23 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import blooddonate.com.blooddonate.R;
 
 public class BloodDetail extends AppCompatActivity {
+
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     TextView tvMale, tvFemale;
     Button btnApositive, btnAnegative, btnBpositive, btnBnegative,
@@ -20,18 +35,17 @@ public class BloodDetail extends AppCompatActivity {
     Button btnDone;
     ImageButton btnBack;
 
-    private EditText edtName, edtAddress;
+    private EditText edtCity, edtAddress;
 
     private String bloodGroup = "";
     private String gender = "";
-    private String mName = "";
+    private String mCity = "";
     private String mAddress = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blood_detail);
-
         findViewByIds();
 
         btnDone.setOnClickListener(new View.OnClickListener() {
@@ -50,18 +64,20 @@ public class BloodDetail extends AppCompatActivity {
     }
 
     private void getDonationDetailAndCheckValidation() {
-        mName = edtName.getText().toString();
+        mCity = edtCity.getText().toString();
         mAddress = edtAddress.getText().toString();
         String bGroup = bloodGroup;
         String gendar = gender;
 
-        if(!gendar.equals("") && !bGroup.equals("") && !mName.equals("") && !mAddress.equals("")) {
+        if(!gendar.equals("") && !bGroup.equals("") && !mCity.equals("") && !mAddress.equals("")) {
+            addDataInFirebaseFirestore();
             Intent intent = new Intent(BloodDetail.this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
 
-        if(mName.equals("")) {
-            edtName.setError("Please Enter this field");
+        if(mCity.equals("")) {
+            edtCity.setError("Please Enter this field");
             return;
         }
 
@@ -75,10 +91,52 @@ public class BloodDetail extends AppCompatActivity {
         }
         if(bGroup.equals("")) {
             Toast.makeText(this, "Please Select Blood Group", Toast.LENGTH_SHORT).show();
-            return;
         }
 
     }
+
+    private void addDataInFirebaseFirestore() {
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("Name");
+        String email = intent.getStringExtra("Email");
+        String password = intent.getStringExtra("Password");
+        String number = intent.getStringExtra("Number");
+
+//        intent.putExtra("Email", email);
+//        intent.putExtra("Password", password);
+//        intent.putExtra("Number", number);
+//        intent.putExtra("UID",mAuth.getCurrentUser().getUid().toString());
+
+        Map<String, Object> user = new HashMap<>();
+        user.put("Name", name);
+        user.put("Email", email);
+        user.put("Password", password);
+        user.put("Number", number);
+        user.put("City", mCity);
+        user.put("Address", mAddress);
+        user.put("Gender", gender);
+        user.put("Blood_Group", bloodGroup);
+        user.put("UID", auth.getCurrentUser().getUid());
+
+
+        db.collection("users")
+                .document(auth.getCurrentUser().getUid())
+                .set(user)
+                .addOnSuccessListener(this, new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(BloodDetail.this, "Remaining Data is Added", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(BloodDetail.this, "Data Addition failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
 
     private void findViewByIds() {
 
@@ -103,7 +161,7 @@ public class BloodDetail extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBackBecomeDoner);
 
         // EditTexts
-        edtName = findViewById(R.id.edtName);
+        edtCity = findViewById(R.id.edtCity);
         edtAddress = findViewById(R.id.edtAddress);
 
     }
