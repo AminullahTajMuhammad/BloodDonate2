@@ -5,20 +5,20 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    android:layout_margin="5dp">
+    android:padding="10dp"
+    app:layout_constraintRight_toRightOf="parent">
 
     <TextView android:id="@+id/tvFor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:text="For"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvRequestFor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:text="Friend"
         android:layout_marginLeft="10dp"
         app:layout_constraintLeft_toRightOf="@+id/tvFor"
@@ -37,8 +37,16 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlack"
         android:text="Hyderabad"
+        app:layout_constraintStart_toStartOf="@+id/tvFor"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/tvFor"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightAccent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCity"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
