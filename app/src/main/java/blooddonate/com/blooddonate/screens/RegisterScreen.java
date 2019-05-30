@@ -11,24 +11,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 import blooddonate.com.blooddonate.R;
 
 public class RegisterScreen extends AppCompatActivity {
 
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     TextInputEditText edtName, edtEmail, edtPassword, edtNumber;
     TextView tvLoginHere;
     Button btnRegister;
-
-    String mName = "";
-    String mEmail = "";
-    String mPassword = "";
-    String mNumber = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +62,7 @@ public class RegisterScreen extends AppCompatActivity {
 
         if(!name.equals("") && !email.equals("") && !password.equals("") && !number.equals("")) {
             createUserOnFirebase(name, email, password, number);
-            finish();
+            //finish();
         }
 
         if(name.equals("")) {
@@ -93,7 +96,31 @@ public class RegisterScreen extends AppCompatActivity {
                 });
 
 
+        createUserOnFirebaseFirestore(name, email, password, number);
+    }
 
+    private void createUserOnFirebaseFirestore(String name, String email, String password, String number) {
+
+        Map<String, Object> user = new HashMap<>();
+        user.put("User_Name", name);
+        user.put("Email", email);
+        user.put("Password", password);
+        user.put("Number", number);
+        user.put("User_ID", mAuth.getCurrentUser().getUid().toString());
+
+        db.collection("users").document(mAuth.getCurrentUser().getUid()).set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(RegisterScreen.this, "Data is Successfully added", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(RegisterScreen.this, "Data added failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void findViewByIds() {

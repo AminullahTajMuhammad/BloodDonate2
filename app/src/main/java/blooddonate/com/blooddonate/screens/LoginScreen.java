@@ -90,11 +90,6 @@ public class LoginScreen extends AppCompatActivity {
 
     private void loginWithFirebase(String email, String password) {
 
-        if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginScreen.this, MainActivity.class));
-            finish();
-        }
-
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -102,6 +97,8 @@ public class LoginScreen extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             startActivity(new Intent(LoginScreen.this, MainActivity.class));
                             finish();
+                        } else {
+                            Toast.makeText(LoginScreen.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
