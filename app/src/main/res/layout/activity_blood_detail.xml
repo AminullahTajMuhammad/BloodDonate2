@@ -36,7 +36,7 @@
         android:layout_below="@+id/tvBecomeDoner"
         android:layout_centerHorizontal="true"
         android:background="@drawable/edittext_border"
-        android:hint="Name"
+        android:hint="City"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:padding="15dp" />

@@ -29,6 +29,8 @@ public class BloodDetail extends AppCompatActivity {
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    String uid;
+
     TextView tvMale, tvFemale;
     Button btnApositive, btnAnegative, btnBpositive, btnBnegative,
             btnABpositive, btnABnegative, btnOpositive, btnOnegative;
@@ -72,6 +74,7 @@ public class BloodDetail extends AppCompatActivity {
         if(!gendar.equals("") && !bGroup.equals("") && !mCity.equals("") && !mAddress.equals("")) {
             addDataInFirebaseFirestore();
             Intent intent = new Intent(BloodDetail.this, MainActivity.class);
+            intent.putExtra("UID", uid);
             startActivity(intent);
             finish();
         }
@@ -102,6 +105,7 @@ public class BloodDetail extends AppCompatActivity {
         String email = intent.getStringExtra("Email");
         String password = intent.getStringExtra("Password");
         String number = intent.getStringExtra("Number");
+        uid = intent.getStringExtra("UID");
 
 //        intent.putExtra("Email", email);
 //        intent.putExtra("Password", password);

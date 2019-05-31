@@ -31,7 +31,7 @@
         android:textStyle="bold"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeToolbar"
+        app:layout_constraintTop_toBottomOf="@id/relativeToolbar"
         android:textColor="@color/colorBlack"
         android:textSize="30sp"
         android:text="Name "
@@ -43,8 +43,8 @@
         android:text="B+"
         android:layout_marginTop="10dp"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/tvName"
-        app:layout_constraintStart_toStartOf="@+id/tvName"/>
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="@id/tvName"/>
 
     <TextView android:id="@+id/tvEmailTitle"
         android:layout_width="wrap_content"
@@ -53,18 +53,18 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toBottomOf="@+id/tvBloodGroup"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvBloodGroup"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email: "
+        android:text=" "
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintLeft_toRightOf="@+id/tvEmailTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvBloodGroup"
+        app:layout_constraintLeft_toRightOf="@id/tvEmailTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvBloodGroup"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvAddressTitle"
@@ -74,18 +74,18 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvEmailTitle"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="address: "
+        android:text=" "
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintLeft_toRightOf="@+id/tvAddressTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+        app:layout_constraintLeft_toRightOf="@id/tvAddressTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvEmail"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvNumberTitle"
@@ -95,18 +95,18 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddressTitle"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvAddressTitle"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="number "
+        android:text=" "
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintLeft_toRightOf="@+id/tvAddressTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+        app:layout_constraintLeft_toRightOf="@id/tvAddressTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvAddress"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvGenderTitle"
@@ -116,18 +116,18 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toBottomOf="@+id/tvNumberTitle"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvNumberTitle"
         tools:ignore="MissingConstraints" />
 
     <TextView android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="gender"
+        android:text=" "
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        app:layout_constraintLeft_toRightOf="@+id/tvNumberTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvNumber"
+        app:layout_constraintLeft_toRightOf="@id/tvNumberTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvNumber"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

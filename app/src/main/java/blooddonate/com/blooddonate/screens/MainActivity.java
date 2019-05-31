@@ -7,19 +7,34 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import blooddonate.com.blooddonate.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseAuth auth;
     ImageButton btnMakeRequest, btnSameDoner, btnYourRequests, btnYourProfile;
-    TextView tvMakeRequest, tvSameDoner, tvYourRequests, tvYourProfile;
+    TextView tvMakeRequest, tvSameDoner, tvYourRequests, tvYourProfile, tvLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         findViewByIds();
+
+
+        auth = FirebaseAuth.getInstance();
+
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                auth.signOut();
+                finish();
+            }
+        });
+
+
 
         btnMakeRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void findViewByIds() {
+        tvLogout = findViewById(R.id.tvLogout);
+
         btnMakeRequest = findViewById(R.id.btnMakeRequest);
         tvMakeRequest = findViewById(R.id.tvMakeRequest);
 

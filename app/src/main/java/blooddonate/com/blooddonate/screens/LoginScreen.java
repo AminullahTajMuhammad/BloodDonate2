@@ -95,7 +95,7 @@ public class LoginScreen extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(LoginScreen.this, BloodDetail.class));
+                            startActivity(new Intent(LoginScreen.this, MainActivity.class));
                             finish();
                         } else {
                             Toast.makeText(LoginScreen.this, "Login Failed", Toast.LENGTH_SHORT).show();
